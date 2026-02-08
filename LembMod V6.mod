@@ -1,3 +1,3 @@
-name = "LembMod-V5.1"
-path = "mod/LembMod-V5.1"
-user_dir = "LembMod-V5.1"
+name = "LembMod-V6"
+path = "mod/LembModv6"
+user_dir = "LembModv6"
