@@ -1,0 +1,552 @@
+country_event = {
+    id = 99900020
+    title = "The dragon sleeps"
+    desc = "China has always been one of the most powerful empires the world has ever seen. They are however weak and fragmented and failed to civilize properly."
+    picture = "Expansion"
+
+	trigger = {
+		OR = {
+			is_sphere_leader_of = BEI
+			is_sphere_leader_of = QNG
+			is_sphere_leader_of = SHA
+			is_sphere_leader_of = NGB
+			is_sphere_leader_of = FZH
+			is_sphere_leader_of = HKG
+			is_sphere_leader_of = BMAC
+			is_sphere_leader_of = NAN
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 0
+	}
+
+    option = {
+	name = "Treaty Ports"
+	remove_global_flag = treaty_ports_activated
+		remove_global_flag = treaty_ports_activated
+
+		remove_country_modifier = treatyport_beijing
+		remove_country_modifier = treatyport_qingdao
+		remove_country_modifier = treatyport_shanghai
+		remove_country_modifier = treatyport_ningbo
+		remove_country_modifier = treatyport_fuzhou
+		remove_country_modifier = treatyport_hongkong
+		remove_country_modifier = treatyport_macau
+		remove_country_modifier = treatyport_nanning
+
+		clr_country_flag = treatyport_beijing
+		clr_country_flag = treatyport_qingdao
+		clr_country_flag = treatyport_shanghai
+		clr_country_flag = treatyport_ningbo
+		clr_country_flag = treatyport_fuzhou
+		clr_country_flag = treatyport_hongkong
+		clr_country_flag = treatyport_macau
+		clr_country_flag = treatyport_nanning
+		
+		diplomatic_influence = {
+			who = BEI
+			value = -500
+		}
+		diplomatic_influence = {
+			who = QNG
+			value = -500
+		}
+		diplomatic_influence = {
+			who = SHA
+			value = -500
+		}
+		diplomatic_influence = {
+			who = NGB
+			value = -500
+		}
+		diplomatic_influence = {
+			who = FZH
+			value = -500
+		}
+		diplomatic_influence = {
+			who = HKG
+			value = -500
+		}
+		diplomatic_influence = {
+			who = MAC
+			value = -500
+		}
+		diplomatic_influence = {
+			who = NAN
+			value = -500
+		}
+
+	}
+}
+
+
+country_event = {
+    id = 99900009
+    title = "The sleeping dragon"
+    desc = "China has always been one of the most powerful empires the world has ever seen. They are however weak and fragmented and failed to civilize properly."
+    picture = "Expansion"
+
+	trigger = {
+		tag = CHI
+		year = 1842
+		NOT = { has_global_flag = treaty_ports_activated }
+	}
+	
+	major = yes
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+    option = {
+	name = "Treaty Ports"
+	set_global_flag = treaty_ports_activated
+    }
+}
+
+country_event = {
+    id = 99900010
+    title = "New Trading Post in Nanning"
+    desc = "By controlling the important port city of Zhanjiang, we gained exclusive trading opportunities in the Nanning Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1495
+		NOT = { has_country_flag = treatyport_nanning }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	NAN = {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = NAN
+				value = -900
+			}
+			clr_country_flag = treatyport_nanning
+			remove_country_modifier = treaty_port_nanning
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = NAN
+			value = 900
+		}
+		set_country_flag = treatyport_nanning
+		add_country_modifier = {
+			name = treaty_port_nanning
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	NAN = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900011
+    title = "New Trading Post in Macau"
+    desc = "By controlling the important port city of Macau, we gained exclusive trading opportunities in the Macau Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1498
+		NOT = { has_country_flag = treatyport_macau }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	MAC = {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = MAC
+				value = -900
+			}
+			clr_country_flag = treatyport_macau 
+			remove_country_modifier = treaty_port_macau
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = MAC
+			value = 900
+		}
+		set_country_flag = treatyport_macau 
+		add_country_modifier = {
+			name = treaty_port_macau
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	MAC = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900012
+    title = "New Trading Post in Hongkong"
+    desc = "By controlling the important port city of Hongkong, we gained exclusive trading opportunities in the Hongkong Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1496
+		NOT = { has_country_flag = treatyport_hongkong }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	HKG = {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = HKG
+				value = -900
+			}
+			clr_country_flag = treatyport_hongkong
+			remove_country_modifier = treaty_port_hongkong
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = HKG
+			value = 900
+		}
+		set_country_flag = treatyport_hongkong
+		add_country_modifier = {
+			name = treaty_port_hongkong
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	HKG = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900013
+    title = "New Trading Post in Fuzhou"
+    desc = "By controlling the important port city of Fuzhou we gained exclusive trading opportunities in the Fuzhou Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1482
+		NOT = { has_country_flag = treatyport_fuzhou }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	FZH = {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = FZH
+				value = -900
+			}
+			clr_country_flag = treatyport_fuzhou 
+			remove_country_modifier = treaty_port_fuzhou
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = FZH
+			value = 900
+		}
+		set_country_flag = treatyport_fuzhou 
+		add_country_modifier = {
+			name = treaty_port_fuzhou
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	FZH = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900014
+    title = "New Trading Post in Ningbo"
+    desc = "By controlling the important port city of Ningbo we gained exclusive trading opportunities in the Ningbo Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1608
+		NOT = { has_country_flag = treatyport_ningbo }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	NGB = {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = NGB
+				value = -900
+			}
+			clr_country_flag = treatyport_ningbo 
+			remove_country_modifier = treaty_port_ningbo 
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = NGB
+			value = 900
+		}
+		set_country_flag = treatyport_ningbo 
+		add_country_modifier = {
+			name = treaty_port_ningbo 
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	NGB = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900015
+    title = "New Trading Post in Shanghai"
+    desc = "By controlling the important port city of Shanghai we gained exclusive trading opportunities in the Shanghai Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1538
+		NOT = { has_country_flag = treatyport_shanghai }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	SHA = {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = SHA
+				value = -900
+			}
+			clr_country_flag = treatyport_shanghai 
+			remove_country_modifier = treaty_port_shanghai 
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = SHA
+			value = 900
+		}
+		set_country_flag = treatyport_shanghai 
+		add_country_modifier = {
+			name = treaty_port_shanghai 
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	SHA = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900016
+    title = "New Trading Post in Qingdao"
+    desc = "By controlling the important port city of Qingdao we gained exclusive trading opportunities in the Qingdao Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1566
+		NOT = { has_country_flag = treatyport_qingdao }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	QNG= {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = QNG
+				value = -900
+			}
+			clr_country_flag = treatyport_qingdao
+			remove_country_modifier = treaty_port_qingdao
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = QNG
+			value = 900
+		}
+		set_country_flag = treatyport_qingdao
+		add_country_modifier = {
+			name = treaty_port_qingdao
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	QNG = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900017
+    title = "New Trading Post in Port Arthur"
+    desc = "By controlling the important port city of Port Arthur we gained exclusive trading opportunities in the Beijing Region. Our merchants are already on their way to establish new lucrative trading routes."
+    picture = "SeaPower"
+
+	trigger = {
+		owns = 1481
+		NOT = { has_country_flag = treatyport_beijing }	
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    option = {
+	name = "A good day for our Empire"
+	#Remove Sphere from existing Sphere Owner
+	BEI= {
+		sphere_owner = {
+			diplomatic_influence = {
+				who = BEI
+				value = -900
+			}
+			clr_country_flag = treatyport_beijing 
+			remove_country_modifier = treaty_port_beijing
+		}
+	}
+	#Add to Sphere & Modifier
+	THIS = {
+		diplomatic_influence = {
+			who = BEI
+			value = 900
+		}
+		set_country_flag = treatyport_beijing 
+		add_country_modifier = {
+			name = treaty_port_beijing
+			duration = -1
+		}
+	}
+	#Add Modifier to Treaty Port
+	BEI = {
+		add_country_modifier = {
+			name = unequal_treaty
+			duration = -1
+		}
+	}
+    }
+}
+
+country_event = {
+    id = 99900018
+    title = "We lost our trading posts"
+    desc = "Our power projection does not suffice anymore to control our Chinese trading posts."
+    picture = "SeaPower"
+
+	trigger = {
+		OR = {
+			has_country_modifier = { treaty_port_nanning }
+			has_country_modifier = { treaty_port_macau }
+			has_country_modifier = { treaty_port_hongkong }
+			has_country_modifier = { treaty_port_fuzhou }
+			has_country_modifier = { treaty_port_ningbo }
+			has_country_modifier = { treaty_port_shanghai }
+			has_country_modifier = { treaty_port_qingdao }
+			has_country_modifier = { treaty_port_beijing }
+		}
+		is_greater_power = no
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+
+    	option = {
+		name = "A dark day for our Empire"
+		remove_country_modifier = treaty_port_nanning 
+		remove_country_modifier = treaty_port_macau 
+		remove_country_modifier = treaty_port_hongkong 
+		remove_country_modifier = treaty_port_fuzhou 
+		remove_country_modifier = treaty_port_ningbo 
+		remove_country_modifier = treaty_port_shanghai 
+		remove_country_modifier = treaty_port_qingdao 
+		remove_country_modifier = treaty_port_beijing
+	}
+}

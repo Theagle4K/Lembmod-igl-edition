@@ -1,0 +1,106 @@
+political_decisions = {
+	exploit_kiruna_iron_mine = {
+		potential = {
+			owns = 321
+			NOT = { 321 = { OR = {
+						has_province_modifier = kiruna_mine
+						has_province_modifier = expanded_kiruna_mine
+						has_province_modifier = intensify_kiruna_mine
+					}
+				}
+			}							
+		}
+		
+		allow = {
+			money = 100000
+			cheap_iron = 1
+		}
+		
+		effect = {
+			money = -100000
+			321 = {
+				add_province_modifier = {
+					name = kiruna_mine
+					duration = -1
+				}
+			}
+		}
+	}
+
+	expand_kiruna_iron_mine = {
+		potential = {
+			owns = 321
+			321 = { has_province_modifier = kiruna_mine }
+			NOT = { 321 = { has_province_modifier = expanded_kiruna_mine } }	
+		}
+		
+		allow = {
+			money = 200000
+			invention = nitroglycerin
+		}
+		
+		effect = {
+			money = -200000
+			321 = {
+				remove_province_modifier = kiruna_mine
+				add_province_modifier = {
+					name = expanded_kiruna_mine 
+					duration = -1
+				}
+			}
+		}
+	}
+
+	intensify_mining_kiruna_iron_mine = {
+		potential = {
+			owns = 321
+			321 = { has_province_modifier = expanded_kiruna_mine }
+			NOT = { 321 = { has_province_modifier = intensify_kiruna_mine } }	
+		}
+		
+		allow = {
+			money = 500000
+			steel_railroad = 1
+		}
+		
+		effect = {
+			money = -500000
+			321 = {
+				remove_province_modifier = expanded_kiruna_mine 
+				add_province_modifier = {
+					name = intensify_kiruna_mine
+					duration = -1
+				}
+			}
+		}
+	}
+
+
+	establish_mining_colony = {
+		potential = {
+			owns = 321
+			321 = { OR = {
+					has_province_modifier = expanded_kiruna_mine 
+					has_province_modifier = intensify_kiruna_mine
+				}
+				NOT = { has_province_modifier = kiruna_mining_colony }
+			}
+		}
+		
+		allow = {
+			money = 25000
+			scientific_management = 1
+		}
+		
+		effect = {
+			money = -25000
+			321 = {
+				life_rating = 3
+				add_province_modifier = {
+					name = kiruna_mining_colony 
+					duration = -1
+				}
+			}
+		}
+	}
+}

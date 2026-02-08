@@ -1,0 +1,88 @@
+country_event = {
+
+	id = 9990003
+
+	is_triggered_only = yes
+	
+
+	title = "$FROMCOUNTRY$ asks the world community for aid"
+	desc = "$FROMCOUNTRY$ has asked us yet again for our financial support. What shall we do?"
+	picture = "market"
+
+	#100K
+	option = {
+		name = "Send 100K"		
+		money = -100000
+		FROM = { money = 100000 }
+		FROM = { country_event = { id = 99900031 days = 0 }	}
+	}
+
+	#500K
+	option = {
+		name = "Send 500K"		
+		money = -500000
+		FROM = { money = 500000 }
+		FROM = { country_event = { id = 99900032 days = 0 }	}	
+	}
+
+	#1000K
+	option = {
+		name = "Send 1M"		
+		money = -1000000
+		FROM = { money = 1000000 }
+		FROM = { country_event = { id = 99900033 days = 0 }	}			
+	}
+
+	#Do nothing
+	option = {
+		name = "Send nothing"				
+	}
+
+	#Remove Offer Grants
+	option = {
+		name = "Send nothing and stop asking me"
+		clr_country_flag = offer_grants	
+		ai_chance = {
+			factor = 100
+		}	
+	}
+}
+
+country_event = {
+	id = 99900031
+	is_triggered_only = yes
+	title = "$FROMCOUNTRY$ has given us 100000£"
+	desc = "$FROMCOUNTRY$ has granted us financial aid of 100K £"
+	picture = "market"
+
+	
+	option = {
+		name = "That's it?"
+	}
+}
+
+country_event = {
+	id = 99900032
+	is_triggered_only = yes
+	title = "$FROMCOUNTRY$ has given us 500000£"
+	desc = "$FROMCOUNTRY$ has granted us financial aid of 500K £"
+	picture = "market"
+
+	
+	option = {
+		name = "We accept this gift"
+	}
+}
+
+country_event = {
+	id = 99900033
+	is_triggered_only = yes
+	title = "$FROMCOUNTRY$ has given us 1000000£"
+	desc = "$FROMCOUNTRY$ has granted us financial aid of 1M £"
+	picture = "market"
+
+	
+	option = {
+		name = "We thank them for their gift"
+	}
+}

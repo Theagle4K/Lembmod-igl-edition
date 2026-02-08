@@ -1,0 +1,29 @@
+political_decisions = {
+	integrate_egypt = {
+		potential = {
+			tag = OTC
+			NOT = { has_global_flag = egypt_integrated }				
+		}
+		
+		allow = {
+			war = no
+			EGY = {
+				all_core = {
+					owned_by = THIS
+				}
+			}
+		}
+		
+		effect = {
+			add_accepted_culture = misri
+			EGY = { 
+				all_core = {
+					add_core = OTC
+					remove_Core = EGY
+				}
+			}
+
+			set_global_flag = egypt_integrated		
+		}
+	}
+}

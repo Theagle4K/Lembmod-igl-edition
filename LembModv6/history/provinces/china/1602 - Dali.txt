@@ -1,0 +1,5 @@
+owner = NAN
+controller = NAN
+add_core = NAN
+trade_goods = precious_metal
+life_rating = 32

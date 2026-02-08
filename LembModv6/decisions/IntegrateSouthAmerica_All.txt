@@ -1,0 +1,33 @@
+political_decisions = {
+	unite_south_america = {
+		potential = {
+			OR = {
+				tag = ARG
+				tag = CLM
+				tag = BRZ	
+			}
+					
+		}
+		
+		allow = {
+			war = no
+			has_global_flag = south_of_south_america_united
+			has_global_flag = north_of_south_america_united		
+			is_greater_power = yes
+			BRZ = {
+				all_core = { owned_by = THIS }
+			}
+			revolution_n_counterrevolution = 1
+		}
+		
+		effect = {
+			prestige = 10
+			change_tag = SAU
+			add_accepted_culture = brazilian
+			add_country_modifier = { 
+				name = ordem_et_progresso 
+				duration = -1 
+			}					
+		}
+	}
+}

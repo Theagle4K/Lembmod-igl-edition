@@ -1,0 +1,58 @@
+political_decisions = {
+	form_benelux = {
+		potential = {
+			tag = NET					
+		}
+		
+		allow = {
+			NET = {
+				all_core = {
+					owned_by = THIS
+				}
+			}
+
+			BEL = {
+				all_core = {
+					owned_by = THIS
+				}
+			}
+
+		}
+		
+		effect = {
+			BEL = { annex_to = THIS }
+			change_tag = BNX
+			add_accepted_culture = wallonian
+			nationalvalue = nv_equality
+			NET = { all_core = { remove_core = NET } }
+			BEL = { all_core = { remove_core = BEL } }
+			prestige = 10
+			badboy = 10
+		}
+	}
+
+	switch_to_dutch_tech_school = {
+		potential = {
+			OR = {
+				tag = BNX
+				tag = NET
+			}
+			tech_school = traditional_academic		
+		}
+		
+		allow = {
+			tech_school = traditional_academic
+			prestige = 100
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = academic_confusion
+				duration = 3650
+			}
+			tech_school = dutch_tech_school 
+		}
+	}
+}
+
+

@@ -1,0 +1,83 @@
+political_decisions = {
+	form_caliphate = {
+		potential = {
+			tag = TUR
+			NOT = { has_global_flag = caliphate_formed  }					
+		}
+		
+		allow = {
+			war = no
+			all_core = { owned_by = THIS }
+			nationalism_n_imperialism = 1
+
+			1151 = { 
+				OR = {
+					owned_by = THIS 
+					owner = { in_sphere = THIS }
+				}
+			}
+			1157 = { 
+				OR = {
+					owned_by = THIS 
+					owner = { in_sphere = THIS }
+				}
+			}
+			1412 = { 
+				OR = {
+					owned_by = THIS 
+					owner = { in_sphere = THIS }
+				}
+			}
+			1171 = { 
+				OR = {
+					owned_by = THIS 
+					owner = { in_sphere = THIS }
+				}
+			}
+			1167 = { 
+				OR = {
+					owned_by = THIS 
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		
+		effect = {
+			change_tag = OTC
+			TUR = { all_core = { remove_core = TUR } }
+
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = bedouin
+						primary_culture = mashriqi
+					}
+					in_sphere = THIS
+				}
+				annex_to = THIS
+			}
+			
+			add_accepted_culture = bedouin
+			any_country = { 
+				limit = { 
+					primary_culture = bedouin
+				}
+				all_core  = { add_core = OTC }
+				annex_to = THIS 
+			}
+
+			add_accepted_culture = mashriqi
+			any_country = { 
+				limit = { 
+					primary_culture = mashriqi
+				}
+				all_core  = { add_core = OTC } 
+				annex_to = THIS
+			}
+
+			badboy = 20
+			prestige = 10
+			set_global_flag = caliphate_formed	
+		}
+	}
+}

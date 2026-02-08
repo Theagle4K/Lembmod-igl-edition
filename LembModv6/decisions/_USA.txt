@@ -1,0 +1,25 @@
+political_decisions = {
+	construct_statue_of_liberty = {
+		potential = {
+			tag = USA					
+			NOT = {
+				has_global_flag = statue_of_liberty_has_been_built
+			}
+		}
+		
+		allow = {
+			government = democracy
+			war = no
+			mass_culture_n_the_avant_garde = 1
+			money = 2000000
+		}
+		
+		effect = {
+			money = -2000000
+			USA = {
+				country_event = { id=19300 days=0 }
+			}
+			set_global_flag = statue_of_liberty_has_been_built
+		}
+	}
+}

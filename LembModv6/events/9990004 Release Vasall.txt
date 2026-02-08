@@ -1,0 +1,25 @@
+country_event = {
+
+	id = 9990004
+
+	is_triggered_only = yes
+	
+
+	title = "Our homeland wants to set us free"
+	desc = "After a long history together, our homeland has decided we have matured enough to set us free"
+	picture = "cityfire"
+
+	option = {
+		name = "We will go onwards alone"	
+		release_vassal = THIS
+		prestige = 10
+		ai_chance = {
+			factor = 100
+		}			
+	}
+
+	option = {
+		name = "We want to stay by our beloved homeland"
+		prestige = -10	
+	}
+}

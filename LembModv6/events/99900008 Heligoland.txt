@@ -1,0 +1,23 @@
+country_event = {
+    id = 99900008
+    title = "Helgoland"
+    desc = "The Germans want us to give up Helgoland. They claim it is their rightful core."
+    picture = "heligoland_treaty_1"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "We will give up Helgoland"
+        533 = {
+            secede_province = GER
+            remove_core = ENG
+        }
+	533 = { change_province_name = "Helgoland" }
+	533 = { state_scope = { change_region_name = "Helgoland" } }
+	}
+
+	option = {
+		name = "Helgoland is ours!"
+		prestige = 10
+	}
+}

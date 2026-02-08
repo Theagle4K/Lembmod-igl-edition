@@ -1,0 +1,27 @@
+political_decisions = {
+	claim_central_america = {
+		potential = {
+			tag = MEX
+			NOT = { has_global_flag = mexican_claim_on_central_america }				
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+			prestige = 20	
+		}
+		
+		effect = {
+			add_accepted_culture = central_american 
+			prestige = 10
+			set_global_flag = mexican_claim_on_central_america
+
+			UCA = {
+				any_core = {
+					add_core = MEX
+				}
+			}
+			badboy = 5
+		}
+	}
+}

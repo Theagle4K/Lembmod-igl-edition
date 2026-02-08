@@ -1,0 +1,56 @@
+political_decisions = {
+	offer_grants = {
+		potential = {
+			ai = no
+			NOT = { has_country_flag = offer_grants	}		
+		}
+		
+		allow = {
+			is_greater_power = yes
+			market_structure = 1
+		}
+		
+		effect = {
+			set_country_flag = offer_grants
+		}
+	}
+
+	discontinue_offer_grants = {
+		potential = {
+			has_country_flag = offer_grants			
+		}
+		
+		allow = {
+		}
+		
+		effect = {
+			clr_country_flag = offer_grants
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+
+	request_grants = {
+		potential = {
+			ai = no
+		}
+	
+		allow = {
+			freedom_of_trade = 1
+		}
+
+		effect = {
+			prestige = -1
+			any_country = {
+				limit = {
+					has_country_flag = offer_grants
+				}
+				country_event = { id=9990003 days=0 }
+			}
+		}
+	}
+}

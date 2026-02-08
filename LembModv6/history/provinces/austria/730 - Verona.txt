@@ -1,0 +1,7 @@
+owner = AUS
+controller = AUS
+add_core = VEN
+trade_goods = silk
+life_rating = 35
+fort = 2
+1861.1.1 = { railroad = 3 }

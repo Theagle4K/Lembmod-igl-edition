@@ -1,0 +1,25 @@
+political_decisions = {
+	release_vasall = {
+		potential = {
+			ai = no
+			num_of_vassals = 1						
+		}
+		
+		allow = {
+			nationalism_n_imperialism = 1
+			war = no
+		}
+		
+		effect = {
+			any_country = {
+				limit = {
+					vassal_of = THIS
+					NOT = { 
+						in_sphere = THIS
+					}
+				}
+				country_event = { id = 9990004 days = 0}
+			}
+		}
+	}
+}

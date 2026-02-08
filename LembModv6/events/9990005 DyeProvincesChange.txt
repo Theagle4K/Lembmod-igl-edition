@@ -1,0 +1,51 @@
+province_event = {
+	title = "Revolution in dye production"
+	desc = "New synthetic ways to produce dye has created millions of unemployed. We must adapt to this new reality."
+	id = 9990005
+	
+	trigger = {
+		owner = { synthetic_dye = 1 }
+		trade_goods = dye
+		unemployment = 0.5
+		NOT = { has_province_modifier = new_dye_methods }
+	}
+	
+	mean_time_to_happen = {
+		months = 480
+		modifier = {
+			factor = 1.1
+			unemployment = 0.6
+		}
+		modifier = {
+			factor = 1.2
+			unemployment = 0.75
+		}
+		modifier = {
+			factor = 1.3
+			unemployment = 0.9
+		}
+	}
+	
+	option = {
+		name = "We must change production"
+		random_list = {
+			33 = { trade_goods = grain }
+			16 = { trade_goods = cattle }
+			33 = { trade_goods = cotton }
+			33 = { trade_goods = tobacco }
+			33 = { trade_goods = tea }
+		}
+		add_province_modifier = {
+			name = new_crops 
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "The old ways need to be respected"
+		add_province_modifier = {
+			name = new_dye_methods 
+			duration = -1
+		}
+	}
+}

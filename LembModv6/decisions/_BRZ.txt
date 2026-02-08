@@ -1,0 +1,29 @@
+political_decisions = {
+	chop_down_amazon_rainforest = {
+		potential = {
+			OR = {
+				tag = BRZ
+				tag = SAU 
+			}
+			NOT = { has_global_flag = chop_down_amazon_rainforest_enacted }			
+		}
+		
+		allow = {
+			war = no
+			interchangeable_parts = 1	
+		}
+		
+		effect = {
+			any_owned = {
+				limit = {
+					trade_goods = tropical_wood
+				}
+				add_province_modifier = { 
+					name = amazon_rainforest
+					duration = -1
+				}
+			}
+			set_global_flag = chop_down_amazon_rainforest_enacted
+		}
+	}
+}

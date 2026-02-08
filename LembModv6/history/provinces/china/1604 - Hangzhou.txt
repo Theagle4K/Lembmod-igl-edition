@@ -1,0 +1,5 @@
+owner = NGB
+controller = NGB
+add_core = NGB
+trade_goods = silk
+life_rating = 32

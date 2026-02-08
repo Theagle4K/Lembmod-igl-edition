@@ -1,0 +1,60 @@
+political_decisions = {
+	unite_the_south_of_south_america = {
+		potential = {
+			OR = {
+				tag = ARG
+				tag = CLM
+				tag = BRZ	
+			}
+			NOT = { has_global_flag = south_of_south_america_united }				
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+			AND = {
+				BOL = {
+					all_core = { owned_by = THIS }
+				}
+				ARG = {
+					all_core = { owned_by = THIS }
+				}
+				URU = {
+					all_core = { owned_by = THIS }
+				}
+				PRG = {
+					all_core = { owned_by = THIS }
+				}
+				CHL = {
+					all_core = { owned_by = THIS }
+				}
+			}
+			
+		}
+		
+		effect = {
+			add_accepted_culture = south_andean 
+			add_accepted_culture = platinean
+			prestige = 10
+			set_global_flag = south_of_south_america_united	
+
+			any_owned = {
+				limit = {
+					NOT = { 
+						is_core = THIS 
+					}
+					OR = {
+
+						is_core = BOL
+						is_core = ARG
+						is_core = URU
+						is_core = PRG
+						is_core = CHL
+					}
+				}
+				add_core = THIS 
+			}
+			badboy = 5				
+		}
+	}
+}

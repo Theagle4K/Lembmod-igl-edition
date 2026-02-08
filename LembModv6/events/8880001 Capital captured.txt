@@ -1,0 +1,56 @@
+country_event = {
+
+	id = 8880001
+
+	trigger = {
+		capital_scope = {
+			NOT = { 
+				controlled_by = THIS 
+			}
+		}
+		NOT = {
+			has_country_modifier = lost_capital
+		}
+	}
+	
+	mean_time_to_happen =  {
+		months = 0
+	}
+
+	title = "We lost our capital"
+	desc = "The nation weeps, for we have lost our capital. All of our ministries fled, destroying any and all documents. This will set us back many months."
+	picture = "Factoryattack"
+
+	option = {
+		name = "This is only a temporary setback" 
+		add_country_modifier = {
+			name = lost_capital
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+
+	id = 8880002
+
+	trigger = {
+		capital_scope = {
+			controlled_by = THIS 
+		}
+		has_country_modifier = lost_capital
+	}
+	
+	mean_time_to_happen =  {
+		months = 0
+	}
+
+	title = "We regained our capital"
+	desc = "Finally we have regained control of our capital. The people are relieved and our ministries can resume their work."
+	picture = "Celebration"
+
+	option = {
+		name = "Our nation regained its heart" 
+		remove_country_modifier = lost_capital
+	}
+}

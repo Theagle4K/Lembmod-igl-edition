@@ -1,0 +1,5 @@
+owner = MAC
+controller = MAC
+add_core = MAC
+trade_goods = tea
+life_rating = 32

@@ -1,0 +1,6 @@
+add_core = MAC
+trade_goods = silk
+life_rating = 32
+
+owner = MAC
+controller = MAC

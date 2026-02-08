@@ -1,0 +1,5 @@
+owner = BEI
+controller = BEI
+add_core = BEI
+trade_goods = iron
+life_rating = 32

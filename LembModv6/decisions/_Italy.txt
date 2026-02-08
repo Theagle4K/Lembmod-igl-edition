@@ -1,0 +1,34 @@
+political_decisions = {
+	form_italy_peacefully = {
+		potential = {
+			tag = SIC
+			NOT = {
+				exists = ITA
+			}
+		}
+		
+		allow = {
+			war = no
+			749 = { owned_by = SIC }
+			year = 1850
+		}
+		
+		effect = {
+			prestige = -50
+			change_tag = ITA
+			capital = 749
+			add_accepted_culture = north_italian
+			add_accepted_culture = south_italian
+			any_country = {
+				limit = {
+					is_culture_group = italian
+					in_sphere = THIS
+				}
+				country_event = { id=11101 days=0 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

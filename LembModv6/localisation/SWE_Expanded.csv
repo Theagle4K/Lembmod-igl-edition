@@ -1,0 +1,16 @@
+;;;;*;;*;*;;;;;;;x;;;;
+exploit_kiruna_iron_mine_title;Exploit the Kiruna Iron Mine;;;;;;;;;;;;;;
+exploit_kiruna_iron_mine_desc;With new technological advances, the giant iron reserves in Kiruna are finally ready for full exploitation.;;;;;;;;;;;;;;
+expand_kiruna_iron_mine_title;Expand Kiruna Iron Mine;;;;;;;;;;;;;;
+expand_kiruna_iron_mine_desc;Thanks to new explosive Nitroglycerin, we can expand our mining operations even further.;;;;;;;;;;;;;;
+establish_mining_colony_title;Establish Mining Colony;;;;;;;;;;;;;;
+establish_mining_colony_desc;Our mining operations are now in full swing and the reserves will not be depleted for centuries. By improving living conditions in the arctic climate for our miners, we can increase our yield for generations to come!;;;;;;;;;;;;;;
+intensify_mining_kiruna_iron_mine_title;Further intensify Mining;;;;;;;;;;;;;;
+intensify_mining_kiruna_iron_mine_desc;With new rail technology, we can expand our operation even further!;;;;;;;;;;;;;;
+kiruna_mine;Kiruna Mine;;;;;;;;;;;;;;
+expanded_kiruna_mine;Kiruna Mine;;;;;;;;;;;;;;
+intensify_kiruna_mine;Kiruna Mine;;;;;;;;;;;;;;
+kiruna_mining_colony;Well-Run Mining Colony;;;;;;;;;;;;;;
+EVTNAME9990001;New Iron Ore Deposit discovered;;;;;;;;;;;;;;
+EVTDESC9990001;Our miners have hit a new rich deposit of iron ore in our Kiruna Iron Mine. We have not yet explored it fully, but are certain of a huge increase of iron production.;;;;;;;;;;;;;;
+EVTOPTA9990001;Let's see what we got!;;;;;;;;;;;;;;

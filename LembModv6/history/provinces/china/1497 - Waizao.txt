@@ -1,0 +1,5 @@
+owner = HKG
+controller = HKG
+add_core = HKG
+trade_goods = silk
+life_rating = 32

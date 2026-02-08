@@ -1,0 +1,5 @@
+owner = FZH
+controller = FZH
+add_core = FZH
+trade_goods = tea
+life_rating = 32
